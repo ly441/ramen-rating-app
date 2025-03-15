@@ -10,4 +10,18 @@
     margin: 20px 0;
     font-size: larger;   
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: burlywood;
+    font-weight: 200;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-height: 250vh;
+    font-display: swap;
+    padding: 20px;
+    border-radius: 10px;
+
+}
 
