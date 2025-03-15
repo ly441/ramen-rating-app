@@ -109,3 +109,19 @@ button {
 button:hover {
     background:yellowgreen;
 }
+footer{
+
+
+    background-color: burlywood;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: larger;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-display: swap;
+    padding: 20px;
+    border-radius: 10px;
+}
