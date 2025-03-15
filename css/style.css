@@ -28,7 +28,7 @@
  
 
 .ramen img {
-    width: 30%;
+    width: 10%;
     border-radius: 10px;
     opacity: 0; /* Start invisible */
     animation: fadeIn 1.5s ease-in-out forwards;
