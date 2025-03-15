@@ -54,7 +54,7 @@ const ramens = [
 document
   .getElementById("ratingForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from refreshing the page
+    event.preventDefault(); 
 
     const ramen = document.getElementById("ramenSelect").value;
     const rating = document.querySelector('input[name="rating"]:checked');
@@ -73,8 +73,8 @@ document
 
     reviewEntry.innerHTML = `
         <h3>${ramen}</h3>
-        <p>⭐ Rating: ${ratingValue}/5</p>
-        <p>📝 Review: ${reviewText}</p>
+        <p> Rating: ${ratingValue}/5</p>
+        <p> Review: ${reviewText}</p>
         <hr>
     `;
 
