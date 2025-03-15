@@ -53,3 +53,59 @@
         width: 30%;
     }
 }
+form {
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background:brown;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.stars input:checked ~ label {
+    color: gold;
+}
+
+button {
+    background: yellowgreen;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background:yellowgreen;
+}
