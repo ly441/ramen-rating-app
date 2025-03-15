@@ -8,7 +8,8 @@
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
-    font-size: larger;   
+    font-size: larger;
+    font-size: xx-large;
 }
 .container{
     display: flex;
@@ -24,4 +25,31 @@
     border-radius: 10px;
 
 }
+ 
 
+.ramen img {
+    width: 30%;
+    border-radius: 10px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px); /* Small lift effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .ramen img {
+        width: 30%;
+    }
+}
