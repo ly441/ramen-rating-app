@@ -101,19 +101,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function addSubmitListener() {
-  document
-    .getElementById("new-ramen-form")
-    .addEventListener("submit", (event) => {
-      event.preventDefault();
-      const newRamen = {
-        name: event.target.name.value,
-        restaurant: event.target.restaurant.value,
-        image: event.target.image.value,
-        rating: event.target.rating.value,
-        comment: event.target.comment.value,
-      };
-      addRamenToMenu(newRamen);
-      event.target.reset();
-    });
-}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ramenMenu = document.getElementById("ramen-menu");
+  const ramenName = document.getElementById("ramen-name");
+  const ramenRestaurant = document.getElementById("ramen-restaurant");
+  const ramenRating = document.getElementById("ramen-rating");
+  const ramenComment = document.getElementById("ramen-comment");
+  const newRamenForm = document.getElementById("new-ramen-form");
+
+  
+
+  function displayRamenDetails(ramen) {
+    ramenName.textContent = ramen.name;
+    ramenRestaurant.textContent = ramen.restaurant;
+    ramenRating.textContent = `Rating: ${ramen.rating}/5`;
+    ramenComment.textContent = `Comment: ${ramen.comment}`;
+  }
+
+  function addRamenToMenu(ramen) {
+    const ramenItem = document.createElement("div");
+    ramenItem.textContent = ramen.name;
+    ramenItem.classList.add("ramen-item");
+    ramenItem.addEventListener("click", () => displayRamenDetails(ramen));
+    ramenMenu.appendChild(ramenItem);
+  }
+
+  ramenData.forEach(addRamenToMenu);
+  if (ramenData.length > 0) displayRamenDetails(ramenData[0]);
+
+  newRamenForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newRamen = {
+      name: document.getElementById("name").value,
+      restaurant: document.getElementById("restaurant").value,
+      rating: document.getElementById("rating").value,
+      comment: document.getElementById("comment").value,
+    };
+    addRamenToMenu(newRamen);
+    newRamenForm.reset();
+  });
+});
