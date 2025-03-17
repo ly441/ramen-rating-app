@@ -27,7 +27,7 @@ const ramens = [
     id: 4,
     name: "Kyoto Ramen",
     restaurant: "Honke Daiichi Asahi",
-    image: "_ (47).jpeg",
+    image: "_ (48).jpeg",
     rating: 4.2,
     comment: "Soy-based broth with extra fatty pork—delicious!",
   },
