@@ -99,3 +99,21 @@ function handleClick(ramen) {
 document.addEventListener("DOMContentLoaded", () => {
   displayRamens(); // ✅ Call it once here
 });
+
+
+function addSubmitListener() {
+  document
+    .getElementById("new-ramen-form")
+    .addEventListener("submit", (event) => {
+      event.preventDefault();
+      const newRamen = {
+        name: event.target.name.value,
+        restaurant: event.target.restaurant.value,
+        image: event.target.image.value,
+        rating: event.target.rating.value,
+        comment: event.target.comment.value,
+      };
+      addRamenToMenu(newRamen);
+      event.target.reset();
+    });
+}
