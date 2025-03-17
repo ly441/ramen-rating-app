@@ -51,41 +51,28 @@ const ramens = [
   },
 ];
 
-document
-  .getElementById("ratingForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); 
 
-    const ramen = document.getElementById("ramenSelect").value;
-    const rating = document.querySelector('input[name="rating"]:checked');
-    const reviewText = document.getElementById("review").value;
+function displayRamens() {
+  const menu = document.getElementById("ramen-menu");
+  menu.innerHTML = ""; // Clear existing content
 
-    if (!rating) {
-      alert("Please select a rating!");
-      return;
-    }
+  ramens.forEach((ramen) => {
+    const ramenContainer = document.createElement("div");
+    ramenContainer.classList.add("ramen-item");
 
-    const ratingValue = rating.value;
+    const img = document.createElement("img");
+    img.src = ramen.image;
+    img.alt = ramen.name;
+    img.addEventListener("click", () => handleClick(ramen));
 
-    // Create review entry
-    const reviewEntry = document.createElement("div");
-    reviewEntry.classList.add("review-card");
+    const name = document.createElement("p");
+    name.textContent = ramen.name;
 
-    reviewEntry.innerHTML = `
-        <h3>${ramen}</h3>
-        <p> Rating: ${ratingValue}/5</p>
-        <p> Review: ${reviewText}</p>
-        <hr>
-    `;
-
-    // Append the new review
-    document.getElementById("ratingsDisplay").appendChild(reviewEntry);
-
-    alert("Thank you for your review!");
-
-    // Reset the form after submission
-    document.getElementById("ratingForm").reset();
+    ramenContainer.appendChild(img);
+    ramenContainer.appendChild(name);
+    menu.appendChild(ramenContainer);
   });
+}
 
 
 
