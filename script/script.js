@@ -3,7 +3,7 @@ const ramens = [
     id: 1,
     name: "Sapporo Ramen",
     restaurant: "Sapporo Ichiban",
-    image: "Sapporo Serenity from,Japan.jpeg",
+    image: "Sapporo Serenity from Hokkaido, Japan.jpeg",
     rating: 5,
     comment: "Rich miso broth, thick noodles, absolutely amazing!",
   },
@@ -19,7 +19,7 @@ const ramens = [
     id: 3,
     name: "Wakayama Ramen",
     restaurant: "Marutaka Ramen",
-    image: "[Iate]Tonkotsu ramen.jpeg",
+    image: "[I ate] Tonkotsu ramen.jpeg",
     rating: 4,
     comment: "A unique blend of shoyu and tonkotsu, very satisfying.",
   },
@@ -27,7 +27,7 @@ const ramens = [
     id: 4,
     name: "Kyoto Ramen",
     restaurant: "Honke Daiichi Asahi",
-    image: "_(47).jpeg",
+    image: "_ (47).jpeg",
     rating: 4.2,
     comment: "Soy-based broth with extra fatty pork—delicious!",
   },
@@ -44,7 +44,7 @@ const ramens = [
     id: 6,
     name: "Okinawa Ramen",
     restaurant: "Shimujo",
-    image: "Soup Lovers_Spicy Miso Ramen_Facebook.jpeg",
+    image: "yum.jpeg",
     rating: 4.5,
     comment:
       "Light pork & bonito broth with chewy udon-like noodles, very unique!",
@@ -64,7 +64,10 @@ function displayRamens() {
     ramenContainer.classList.add("ramen-item");
 
     const img = document.createElement("img");
-    img.src = `./images/${ramen.image}`;
+    img.src = encodeURI(`./images/${ramen.image}`);
+    console.log(encodeURI(`./images/${ramen.image}`));
+
+    img.alt = ramen.name;
     img.addEventListener("click", (event) => {
       event.preventDefault(); // Prevent default behavior
       console.log(`Clicked: ${ramen.name}`);
